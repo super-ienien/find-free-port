@@ -25,8 +25,11 @@ function findFreePort(beg, ...rest){
   const res = [];
   const getNextPort = function (port) {
     if (exclude) {
+      console.log ('exclude', exclude);
       let nextPort = port + 1;
+      console.log(nextPort);
       while(nextPort < end && exclude.has(nextPort)) {
+        console.log(nextPort);
         nextPort++;
       }
       return nextPort;
