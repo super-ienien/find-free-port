@@ -11,6 +11,12 @@ function findFreePort(beg, ...rest){
   const p = rest.slice(0, rest.length - 1), cb = rest[rest.length - 1];
   let [end, ip, cnt] = Array.from(p);
   let exclude = p.find(arg => Array.isArray(arg) || (arg instanceof Set));
+  console.log (p);
+  if (!exclude) {
+    console.log ('exclude not found');
+  } else {
+    console.log ('exclude found');
+  }
   if (Array.isArray(exclude)) exclude = new Set(exclude);
   if (typeof ip !== 'string') ip = null;
   if (typeof cnt !== 'string' && typeof cnt !== 'number') cnt = null;
